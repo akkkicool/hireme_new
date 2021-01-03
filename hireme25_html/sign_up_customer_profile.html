@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+		<meta name="description" content="Gambolthemes">
+		<meta name="author" content="Gambolthemes">
+		<title>HIREME25 - Sign Up Customer Profile</title>
+		
+		<!-- Favicon Icon -->
+		<link rel="icon" type="image/png" href="images/fav.png">
+		
+		<!-- Stylesheets -->
+		<link href="css/responsive.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/datepicker.min.css" rel="stylesheet">
+		<link href="css/jquery.range.css" rel="stylesheet">
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+		
+		<!-- Semantic Css -->
+		<link rel="stylesheet" type="text/css" href="vendor/semantic/semantic.min.css">
+
+		<style>
+			.btn-152{
+				padding: 0px 20px;
+				height: 50px;
+				border: 0;
+				margin: 45px 0 0;
+				width: 100%;
+			}
+
+			.lr_btn{
+				font-size: 16px;
+    			font-weight: 500;
+				background-color: #ffcc00;
+				box-shadow: 0 16px 29px #0BBEAD69;
+				border-radius: 50px;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<!-- Search Model Start -->
+		<div class="modal srch-model fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header sheader">
+						<button type="button" class="close srch-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="srch-input" placeholder="Search Keywords...">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<!-- Search Model End -->
+		<!-- Header Start -->
+		<header>
+			<div class="top-header">				
+				<div class="container">				
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="top-header-full">
+								<div class="top-left-hd">
+									<ul>
+										<li><div class="wlcm-text">Welcome to HIREME25</div></li>
+									</ul>
+								</div>
+								<div class="top-right-hd">
+									<ul>
+										<li>
+											<a href="sign_in.html" class="account-link" role="button">
+												<span class="header-nav">Log In</span>
+											</a>	
+										</li>
+										<li>
+											<a href="sign_up.html" class="account-link" role="button">
+												<span class="header-nav">Register</span>
+											</a>	
+										</li>											
+									</ul>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub-header">				
+				<div class="container">				
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<nav class="navbar navbar-expand-lg navbar-light bg-dark1 justify-content-sm-start">
+								<a class="order-1 order-lg-0 ml-lg-0 ml-3 mr-auto" href="index.html"><img src="images/output-onlinepngtools.png" alt=""></a>
+								<button class="navbar-toggler align-self-start" type="button">
+									<i class="fas fa-bars"></i>
+								</button>
+								<div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu" id="navbarSupportedContent">
+									<ul class="navbar-nav align-self-stretch">
+										<li class="nav-item active">
+											<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+										</li>
+
+										<li class="nav-item dropdown">
+											<a href="about.html" class="nav-link">About Us</a>
+										</li>
+																				
+									</ul>
+									<!-- <a href="#" class="search-link" role="button" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i></a> -->
+									<!-- <a href="sign_in.html" class="add-post">SIGN IN</a>
+									<a href="sign_up.html" class="add-task">REGISTER</a> -->									
+								</div>
+								<div class="responsive-search order-1">
+									<input type="text" class="rsp-search" placeholder="Search...">
+									<i class="fas fa-search r-sh1"></i>
+								</div>
+							</nav>							
+							<div class="overlay"></div>
+						</div>					
+					</div>					
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+		<!-- Title Start -->
+		<div class="title-bar">			
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<ol class="title-bar-text">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Create Customer Profile</li>
+						</ol>
+					</div>		
+				</div>		
+			</div>		
+		</div>
+		<!-- Title Start -->
+		<!-- Body Start -->	
+		<main class="browse-section">				
+			<div class="container">
+				<div class="row">
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-10" style="background: #fafafa; padding: 50px;">							
+						<div class="main-heading bids_heading">
+							<h2>Fill Personal Details</h2>
+							<div class="line-shape1">
+								<img src="images/line.svg" alt="">
+							</div>
+						</div>
+						<div class="post501">
+							<form>	
+								<div class="row">
+									<!-- <div class="col-lg-12" style="margin-top: 50px; text-align:right;">
+										<h3>Personal Details</h3>
+									</div>	 -->													
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="label15">First Name*</label>
+											<input type="text" class="job-input" placeholder="Your First Name">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="label15">Last Name*</label>
+											<input type="text" class="job-input" placeholder="Your Last Name">
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="label15">Gender*</label>
+											<div style="width: 100%;">
+												<input type="radio" name="gender" checked> Male &nbsp;&nbsp;&nbsp;
+												<input type="radio" name="gender"> Female 
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="form-group">
+											<label class="label15">Birthday*</label>
+											<div class="smm_input">
+												<input type="text" class="job-input datepicker-here" data-language="en" placeholder="Enter Your Birth Date">
+												<div class="mix_max"><i class="fas fa-calendar-alt"></i></div>															
+											</div>															
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<label class="label15">Location*</label>
+											<div class="smm_input">
+												<input type="text" class="job-input" placeholder="Type Address">
+												<div class="loc_icon"><i class="fas fa-crosshairs"></i></div>								
+											</div>															
+										</div>															
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<div class="avtar_dp">
+												<img src="images/profile_dp.jpg" alt="">
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-12">
+										<div class="form-group">
+											<div class="image-upload-wrap1 ml5">
+												<input class="file-upload-input1" id="file3" type="file" onchange="readURL(this);" accept="image/*">
+												<div class="drag-text1">
+													Upload Image
+												</div>																	
+											</div>
+										</div>																
+									</div>			
+									<div class="col-lg-12">
+										<a href="my_customer_profile.html" class="lr_btn">Continue</a>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="col-md-1">
+					</div>
+					<div class="col-md-4">
+						</div>
+					</div>																																					
+				</div>
+			</div>					
+		</main>
+		<!-- Body End -->
+		<!-- footer Start -->
+		<footer class="footer">
+			<div class="subscribe-newsletter">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-6 col-md-6">
+							<div class="subcribes">
+								<div class="text-step1">
+									<h4>Subscribe to Newsletter</h4>
+									<div class="btext-heading mt-2" style="color:#acacac; font-size:14px; text-align:left;">
+										<i class="fas fa-check-circle"></i>Get weekly newsletter right into your inbox.
+									</div>								
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-5 col-md-6">
+							<div class="subcribe-input">
+								<input class="nltr-input" type="email" placeholder="Your Email Address"> 
+								<button class="s-btn">Subscribe</button>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3">
+						<div class="about-jobby">
+							<a href="index.html"><img src="images/logo.png" alt=""></a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu purus et diam blandit vehicula sit amet sed metus. Fusce condimentum non neque at fringilla. Aenean malesuada aliquet tincidunt.</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>About</h4>
+							<ul>							
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="sign_in.html">Login</a></li>
+								<li><a href="my_freelancer_profile.html">My Account</a></li>
+								<li><a href="contact_us.html">Contact</a></li>
+								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+								<li><a href="Terms.html">Terms of Use</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>Quick Links</h4>
+							<ul>		
+								<li><a href="index.html">Home</a></li>	
+								<li><a href="about.html">About</a></li>				
+								<li><a href="browse_freelancers.html">Browse Freelancers</a></li>							
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>Top Categories</h4>
+							<ul>							
+								<li><a href="#">Beauty Specialist</a></li>
+								<li><a href="#">IT Specialist</a></li>
+								<li><a href="#">Home Renovation</a></li>
+								<li><a href="#">Writing & Translation</a></li>
+								<li><a href="#">Painters</a></li>	
+								<li><a href="#">Electrician</a></li>	
+								<li><a href="#">Cleaning & Disinfection</a></li>							
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copy-social">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="copyright">
+								<i class="far fa-copyright"></i>Copyright 2020 <span><a href="#">HIREME25</a></span>. All Right Reserved.
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="social-icons">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer End -->
+		<!-- Scroll to Top Button Start -->
+		<button onclick="topFunction()" id="pageup" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<!-- Scroll to Top Button End -->
+		<!-- Scripts js -->	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/datepicker.min.js"></script>
+		<script src="js/i18n/datepicker.en.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/OwlCarousel/owl.carousel.js"></script>
+		<script src="vendor/semantic/semantic.min.js"></script>
+		<script src="js/jquery.range-min.js"></script>
+		<script src="js/custom1.js"></script>
+		
+		
+	</body>
+	
+</html>

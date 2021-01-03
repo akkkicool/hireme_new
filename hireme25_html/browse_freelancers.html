@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+		<meta name="description" content="Gambolthemes">
+		<meta name="author" content="Gambolthemes">
+		<title>HIREME25 - Browse Freelancers</title>
+		
+		<!-- Favicon Icon -->
+		<link rel="icon" type="image/png" href="images/fav.png">
+		
+		<!-- Stylesheets -->
+		<link href="css/responsive.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/datepicker.min.css" rel="stylesheet">
+		<link href="css/jquery.range.css" rel="stylesheet">
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+		
+		<!-- Semantic Css -->
+		<link rel="stylesheet" type="text/css" href="vendor/semantic/semantic.min.css">
+
+		<style>
+			.slidecontainer {
+			  width: 100%;
+			}
+
+			.slider {
+			  -webkit-appearance: none;
+			  width: 100%;
+			  height: 25px;
+			  background: #d3d3d3;
+			  outline: none;
+			  opacity: 0.7;
+			  -webkit-transition: .2s;
+			  transition: opacity .2s;
+			}
+
+			.slider:hover {
+			  opacity: 1;
+			}
+
+			.slider::-webkit-slider-thumb {
+			  -webkit-appearance: none;
+			  appearance: none;
+			  width: 25px;
+			  height: 25px;
+			  background: #4CAF50;
+			  cursor: pointer;
+			}
+
+			.slider::-moz-range-thumb {
+			  width: 25px;
+			  height: 25px;
+			  background: #4CAF50;
+			  cursor: pointer;
+			}
+		</style>
+		
+	</head>
+	<body>
+		<!-- Search Model Start -->
+		<div class="modal srch-model fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header sheader">
+						<button type="button" class="close srch-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="srch-input" placeholder="Search Keywords...">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<!-- Search Model End -->
+		<!-- Header Start -->
+		<header>
+			<div class="top-header">				
+				<div class="container">				
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="top-header-full">
+								<div class="top-left-hd">
+									<ul>
+										<li><div class="wlcm-text">Welcome to HIREME25</div></li>
+									</ul>
+								</div>
+								<div class="top-right-hd">
+									<ul>
+										<li>
+											<a href="sign_in.html" class="account-link" role="button">
+												<span class="header-nav">Sign In</span>
+											</a>	
+										</li>
+										<li>
+											<a href="sign_up.html" class="account-link" role="button">
+												<span class="header-nav">Sign Up</span>
+											</a>	
+										</li>											
+									</ul>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub-header">				
+				<div class="container">				
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<nav class="navbar navbar-expand-lg navbar-light bg-dark1 justify-content-sm-start">
+								<a class="order-1 order-lg-0 ml-lg-0 ml-3 mr-auto" href="index.html"><img src="images/output-onlinepngtools.png" alt=""></a>
+								<button class="navbar-toggler align-self-start" type="button">
+									<i class="fas fa-bars"></i>
+								</button>
+								<div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu" id="navbarSupportedContent">
+									<ul class="navbar-nav align-self-stretch">
+										<li class="nav-item active">
+											<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+										</li>
+										<li class="nav-item dropdown">
+											<a href="about.html" class="nav-link">About Us</a>
+										</li>
+										<li class="nav-item dropdown">
+											<a href="about.html" class="nav-link">Browse Freelancers</a>
+										</li>
+																				
+									</ul>
+									<!-- <a href="#" class="search-link" role="button" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i></a> -->
+									<!-- <a href="sign_in.html" class="add-post">SIGN IN</a>
+									<a href="sign_up.html" class="add-task">REGISTER</a> -->									
+								</div>
+								<div class="responsive-search order-1">
+									<input type="text" class="rsp-search" placeholder="Search...">
+									<i class="fas fa-search r-sh1"></i>
+								</div>
+							</nav>							
+							<div class="overlay"></div>
+						</div>					
+					</div>					
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+		<!-- Title Start -->
+		<div class="title-bar">			
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<ol class="title-bar-text">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Browse Freelancers</li>
+						</ol>
+					</div>		
+				</div>		
+			</div>		
+		</div>
+		<!-- Title Start -->
+		<!-- Body Start -->	
+		<main class="browse-section">				
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-5">
+						<div class="browser-job-filters">
+							<div class="filter-heading">
+								<div class="fh-left">
+									Filters
+								</div>
+								<!-- <div class="fh-right">
+									<a href="#">Clear All Filters</a>
+								</div> -->
+							</div>
+							<div class="fltr-group">
+								<div class="fltr-items-heading">
+									<div class="fltr-item-left">
+										<h6>Categories</h6>
+									</div>
+									<!-- <div class="fltr-item-right">
+										<a href="#">Clear</a>
+									</div> -->
+								</div>								
+								<div class="ui fluid multiple search selection dropdown skills-search">
+									<input name="tags" type="hidden" value="">
+									<i class="dropdown icon"></i>
+									<input class="search" autocomplete="off" tabindex="0"><span class="sizer" style=""></span><div class="default text">Categories</div>
+									<div class="menu transition hidden" tabindex="-1">
+										<div class="item selected" data-value="angular">Car Detailer</div>
+										<div class="item" data-value="css">Facials</div>
+										<div class="item" data-value="design">Hairdresser</div>
+										<div class="item" data-value="ember">Nails</div>
+										<div class="item" data-value="html">Computer Lessons</div>
+										<div class="item" data-value="ia">CPR / First Aid</div>
+									</div>
+								</div>
+							</div>
+							<div class="fltr-group">
+								<div class="fltr-items-heading">
+									<div class="fltr-item-left">
+										<h6>Services</h6>
+									</div>
+									<!-- <div class="fltr-item-right">
+										<a href="#">Clear</a>
+									</div> -->
+								</div>								
+								
+								<input name="tags" type="hidden" value="">
+								<span class="sizer" style=""></span>
+								<div class="ui fluid multiple search selection dropdown skills-search">
+									<input name="tags" type="hidden" value="">
+									<i class="dropdown icon"></i>
+									<input class="search" autocomplete="off" tabindex="0"><span class="sizer"></span><span class="sizer" style=""></span><div class="default text">Services</div>
+									<div class="menu transition hidden" tabindex="-1">
+										<div class="item selected" data-value="angular">Hair cut</div>
+										<div class="item" data-value="css">Hair coloring</div>
+										<div class="item" data-value="design">Spa</div>
+									</div>
+								</div>
+							</div>
+							<div class="fltr-group">
+								<div class="fltr-items-heading">
+									<label class="label15">Pay Rate</label>
+									<div class="ui fluid search selection dropdown skills-search">
+										<input name="tags" type="hidden" value="">
+										<i class="dropdown icon"></i>
+										<input class="search" autocomplete="off" tabindex="0">
+										<span class="sizer" style=""></span>
+										<div class="default text">Select Your Rate</div>
+										<div class="menu transition hidden" tabindex="-1">
+											<div class="item" data-value="25">USD 25</div>										
+											<div class="item" data-value="50">USD 50</div>										
+											<div class="item" data-value="75">USD 75</div>										
+											<div class="item" data-value="100">USD 100</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="fltr-group">
+								<div class="fltr-items-heading">
+									<label class="label15">Total Experience</label>								
+									<div class="ui fluid search selection dropdown skills-search">
+										<input name="tags" type="hidden" value="">
+										<i class="dropdown icon"></i>
+										<input class="search" autocomplete="off" tabindex="0">
+										<span class="sizer" style=""></span>
+										<div class="default text">Select Your Experience</div>
+										<div class="menu transition hidden" tabindex="-1">
+											<div class="item" data-value="1">1 Year</div>										
+											<div class="item" data-value="2">2 Years</div>										
+											<div class="item" data-value="3">3 Years</div>										
+											<div class="item" data-value="4">4 Years</div>										
+											<div class="item" data-value="5">5 Years</div>										
+											<div class="item" data-value="6">6 Years</div>										
+											<div class="item" data-value="7">7 Years</div>										
+											<div class="item" data-value="8">8 Years</div>										
+											<div class="item" data-value="9">9 Years</div>										
+											<div class="item" data-value="10">10 Years</div>											
+											<div class="item" data-value="10+">Above 10 Years</div>
+										</div>
+									</div>
+								</div>								
+							</div>
+							<div class="fltr-group">
+								<label class="label15">Location</label>
+								<div class="smm_input">
+									<input type="text" class="job-input" placeholder="Type Address">
+									<div class="loc_icon"><i class="fas fa-crosshairs"></i></div>								
+								</div>
+								<label class="label15"></label>
+								<div class="slidecontainer">
+									<input type="range" min="1" max="100" value="20" class="slider" id="myRange">
+									<p>Within <span id="demo"></span> Miles</p>
+								</div>
+							</div>
+							<div class="fltr-group">
+								
+							</div>
+							<div class="fltr-group fltr-gend">
+								<div class="filter-button">
+									<button class="flr-btn">Search Now</button>
+								</div>	
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-md-7 mainpage">
+						<div class="main-tabs">
+							<div class="res-tabs">
+								<div class="mtab-left">
+									<ul class="browsr-project">
+										<li>
+											<span class="nav-link">Search Results</span>
+										</li>																			
+									</ul>
+								</div>
+								<div class="mtab-right">
+									<ul>
+										<li class="bp-block">
+											<div class="ui selection dropdown skills-search sort-dropdown">
+												<input name="gender" type="hidden" value="default">
+												<i class="dropdown icon d-icon"></i>
+												<div class="text">Sort By</div>
+												<div class="menu">
+													<div class="item" data-value="0">All</div>
+													<div class="item" data-value="1">Top</div>
+													<div class="item" data-value="2">Newest</div>
+													<div class="item" data-value="3">Ranking</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="prjoects-content">
+								<div class="row">
+									<div class="lg-item5 col-lg-6 col-xs-6 grid-group-item5">
+										<div class="job-item mt-30">
+											<div class="job-top-dt1 text-center">
+												<div class="job-center-dt">
+													<img src="images/homepage/candidates/hairdresser-659145_640.jpg" alt="">
+													<div class="job-urs-dts">
+														<a href="other_freelancer_profile.html"><h4>Maria Williams</h4></a>
+														<span>Hairdresser</span>
+													</div>													
+												</div>	
+												<div class="job-price hire-price">$50/hr</div>
+											</div>
+											<div class="rating-location">
+												<div class="left-rating">
+													<div class="rtitle">Rating</div>
+													<div class="star">
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>
+														<i class="fas fa-star"></i>								
+														<span>4.9</span> 
+													</div>
+												</div>
+												<div class="right-location">
+													<div class="text-left">
+														<div class="rtitle">Location</div>
+														<span><i class="fas fa-map-marker-alt"></i> New York City</span>
+													</div>
+												</div>
+											</div>
+											<div class="job-buttons">
+												<ul class="link-btn">
+													<li><a href="other_freelancer_profile.html" class="link-j1" title="View Profile">View Profile</a></li>
+													<li><a href="#" class="link-j1" title="Hire Me">Hire Me</a></li>
+													<li class="bkd-pm"><button class="bookmark1" title="bookmark"><i class="fas fa-heart"></i></button></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									
+									
+									<div class="col-12">
+										<div class="main-p-pagination">
+											<nav aria-label="Page navigation example">
+												<ul class="pagination">
+													<li class="page-item">
+														<a class="page-link" href="#" aria-label="Previous">
+															PREV
+														</a>
+													</li>
+													<li class="page-item"><a class="page-link active" href="#">1</a></li>
+													<li class="page-item"><a class="page-link" href="#">2</a></li>
+													<li class="page-item"><a class="page-link" href="#">...</a></li>
+													<li class="page-item"><a class="page-link" href="#">24</a></li>
+													<li class="page-item">
+														<a class="page-link" href="#" aria-label="Next">
+															NEXT
+														</a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</div>										
+								</div>
+							</div>														
+						</div>														
+					</div>													
+				</div>
+			</div>					
+		</main>
+		<!-- Body End -->
+		<!-- footer Start -->
+		<footer class="footer">
+			<div class="subscribe-newsletter">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-6 col-md-6">
+							<div class="subcribes">
+								<div class="text-step1">
+									<h4>Subscribe to Newsletter</h4>
+									<div class="btext-heading mt-2" style="color:#acacac; font-size:14px;">
+										<i class="fas fa-check-circle"></i>Cras nunc mauris, rhoncus eu justo at, egestas sagittis felis. Ut sed feugiat eros.
+									</div>								
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-5 col-md-6">
+							<div class="subcribe-input">
+								<input class="nltr-input" type="email" placeholder="Your Email Address"> 
+								<button class="s-btn">Subscribe</button>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3">
+						<div class="about-jobby">
+							<a href="index.html"><img src="images/logo1.svg" alt=""></a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu purus et diam blandit vehicula sit amet sed metus. Fusce condimentum non neque at fringilla. Aenean malesuada aliquet tincidunt.</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>About</h4>
+							<ul>							
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="sign_in.html">Login</a></li>
+								<li><a href="my_freelancer_profile.html">My Account</a></li>
+								<li><a href="contact_us.html">Contact</a></li>
+								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+								<li><a href="Terms.html">Terms of Use</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>For Companies</h4>
+							<ul>							
+								<li><a href="browse_freelancers.html">Browese Freelancers</a></li>
+								<li><a href="post_a_job.html">Post a Job</a></li>
+								<li><a href="post_a_project.html">Post a Project</a></li>
+								<li><a href="pricing_plans.html">Pricing Plans</a></li>								
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>For Candidates</h4>
+							<ul>							
+								<li><a href="browse_jobs.html">Browese Jobs</a></li>
+								<li><a href="my_freelancer_jobs.html">Jobs Alerts</a></li>
+								<li><a href="my_freelancer_jobs.html">Applied Jobs</a></li>
+								<li><a href="my_freelancer_bookmarks.html">Bookmarks</a></li>								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copy-social">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="copyright">
+								<i class="far fa-copyright"></i>Copyright 2019 <span>Jobby</span> by <a href="#" >Gambolthemes</a>. All Right Reserved.
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="social-icons">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer End -->
+		<!-- Scroll to Top Button Start -->
+		<button onclick="topFunction()" id="pageup" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<!-- Scroll to Top Button End -->
+		<!-- Scripts js -->	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/datepicker.min.js"></script>
+		<script src="js/i18n/datepicker.en.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/OwlCarousel/owl.carousel.js"></script>
+		<script src="vendor/semantic/semantic.min.js"></script>
+		<script src="js/jquery.range-min.js"></script>
+		<script src="js/custom1.js"></script>
+
+		<script>
+			var slider = document.getElementById("myRange");
+			var output = document.getElementById("demo");
+			output.innerHTML = slider.value;
+
+			slider.oninput = function() {
+			  output.innerHTML = this.value;
+			}
+		</script>
+		
+		
+	</body>
+	
+</html>

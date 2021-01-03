@@ -1,0 +1,192 @@
+<?php
+
+namespace App\Http\Controllers\Front;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\FreelanceProfile;
+use App\Models\Portfolio;
+use App\Models\Category;
+use Validator;
+use Auth;
+use Hash;
+use Session;
+
+class FreelanceController extends Controller{
+
+    public function __construct(){   
+       
+    }
+
+    public function profile(Request $request){
+      $user = Auth::user();
+    	$social['fb_acc'] = Auth::user()->profile->fb_acc;
+    	$social['twitter_acc'] =  Auth::user()->profile->twitter_acc;
+    	$social['insta_acc'] =  Auth::user()->profile->insta_acc;
+
+    	$service['tagline'] =  Auth::user()->profile->tagline;
+    	$service['description'] =  Auth::user()->profile->description;
+    	$service['exp'] =  Auth::user()->profile->exp;
+    	$service['rate'] =  Auth::user()->profile->rate;
+    	$service['category'] =  Auth::user()->profile->category;
+    	$service['sub_category'] =  Auth::user()->profile->sub_category;
+
+       $category = Category::whereNull('parent_id')->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
+
+
+       $cat =  array_keys($category); 
+
+       $sub_category = Category::whereIn('parent_id', $cat)->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
+
+       
+
+      if($request->isMethod('post')){
+        $validator = Validator::make($request->all(), [
+                'first_name' => 'required',
+                'last_name'=>'required',
+                'dob'=>'required',
+                'address'=>'required',
+              //  'password_confirmation'=>'sometimes|required_with:password',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+            }else{
+                 
+              $user->first_name = $request->first_name;
+              $user->last_name = $request->last_name;
+              $user->dob = $request->dob;
+              $user->address = $request->address;
+              $user->lat = $request->lat;
+              $user->lng = $request->lng;
+              $user->save();
+
+                toastr()->success('Profile Successfully updated !');
+                return redirect()->back();
+            }
+      }
+
+    	return view('front.freelancer.profile', compact('social', 'service', 'user', 'category', 'sub_category'));
+    }
+
+
+    public function change_password(Request $request){
+        $data = array(); 
+
+        if($request->isMethod('post')){
+           
+        	
+        	//gs(Session::all());
+            $validator = Validator::make($request->all(), [
+                'old_password' => 'required',
+                'password'=>'required|confirmed',
+              //  'password_confirmation'=>'sometimes|required_with:password',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+            }else{
+                 $current_password = Auth::user()->password;           
+                  if(Hash::check($request->old_password, $current_password))
+                  {    
+                     $user_id = Auth::user()->id;                       
+                    $obj_user = User::find($user_id);
+                    $obj_user->password = \Hash::make($request->password);
+                    $obj_user->save();  
+                     toastr()->success('Password Successfully updated !');
+                    return redirect()->back()->withInput(['tab'=>'change_password']);
+                  }else{
+                     toastr()->error('Old password is wrong!');
+                    return redirect()->back()
+                            ->withInput(['tab'=>'change_password']);
+                  }
+            }
+        }
+        
+    }
+
+    public function update_account(Request $request){
+      
+        if($request->isMethod('post')){
+        	
+             $update = FreelanceProfile::where('user_id', Auth::user()->id)->first(); 
+             $update->fb_acc = $request->fb_acc;          
+             $update->twitter_acc = $request->twitter_acc;
+             $update->insta_acc  = $request->insta_acc;
+             $update->save();
+             toastr()->success('Social Account Successfully updated !');
+             return redirect()->back()->withInput(['tab'=>'social_accounts']);
+            
+        }
+        
+    }
+
+    public function delete_portfolio(Request $request){
+     
+        if($request->ajax()){
+       		  Portfolio::where('id',$request->id)->delete();
+	          return response()->json('true');
+        }
+        
+    }
+
+
+    public function freelancer_portfolio(Request $request){
+    	return view('front.freelancer.portfolio');
+    }
+
+
+    public function update_service(Request $request){
+
+        if($request->isMethod('post')){
+
+              $profile = FreelanceProfile::where('user_id', Auth::user()->id)->first();
+              if($profile){
+                $profile->tagline =  $request->tagline;
+                $profile->description =  $request->description;
+                $profile->exp =  $request->exp;
+                $profile->rate =  $request->rate;
+                $profile->category =  $request->category;
+                $profile->sub_category =  $request->sub_category;
+                $profile->save();
+              }
+
+              toastr()->success('Services Successfully updated !');
+             return redirect()->back()->withInput(['tab'=>'social_accounts']);
+            
+        }
+        
+    }
+
+
+    public function store_front(Request $request){
+
+       return view('front.freelancer.storefront');         
+    }
+
+
+    public function store_create(Request $request){
+
+      $service['tagline'] =  Auth::user()->profile->tagline;
+      $service['description'] =  Auth::user()->profile->description;
+      $service['exp'] =  Auth::user()->profile->exp;
+      $service['rate'] =  Auth::user()->profile->rate;
+      $service['category'] =  Auth::user()->profile->category;
+      $service['sub_category'] =  Auth::user()->profile->sub_category;
+
+       $category = Category::whereNull('parent_id')->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
+
+
+       $cat =  array_keys($category); 
+
+       $sub_category = Category::whereIn('parent_id', $cat)->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
+
+       return view('front.freelancer.store_create', compact('service','category', 'sub_category'));         
+    }
+
+}

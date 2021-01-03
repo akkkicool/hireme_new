@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, shrink-to-fit=9">
+		<meta name="description" content="Gambolthemes">
+		<meta name="author" content="Gambolthemes">
+		<title>HIREME25 - Freelancer Maria Williams</title>
+		
+		<!-- Favicon Icon -->
+		<link rel="icon" type="image/png" href="images/fav.png">
+		
+		<!-- Stylesheets -->
+		<link href="css/responsive.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link href="css/datepicker.min.css" rel="stylesheet">
+		<link href="css/jquery.range.css" rel="stylesheet">
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+		<link href="vendor/OwlCarousel/assets/owl.carousel.css" rel="stylesheet">
+		<link href="vendor/OwlCarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+		
+		<!-- Semantic Css -->
+		<link rel="stylesheet" type="text/css" href="vendor/semantic/semantic.min.css">
+		
+		<!-- Map Box -->
+		<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+		<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+
+		<style>
+			@keyframes bounce { 
+			  0% { transform: translateY(0); }
+			  100% { transform: translateY(-10px); }
+			}
+
+			.ball {
+			  animation: bounce 1.2s;
+			  animation-direction: alternate;
+			  animation-iteration-count: infinite;
+			}
+		</style>
+				
+	</head>
+	<body>
+		<!-- Search Model Start -->
+		<div class="modal srch-model fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content">
+					<div class="modal-header sheader">
+						<button type="button" class="close srch-close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<input type="text" class="srch-input" placeholder="Search Keywords...">
+					</div>				
+				</div>
+			</div>
+		</div>
+		<!-- Search Model End -->
+		<!-- Header Start -->
+		<header>
+			<div class="top-header">				
+				<div class="container">				
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<div class="top-header-full">
+								<div class="top-left-hd">
+									<ul>
+										<li><div class="wlcm-text">Welcome to HIREME25</div></li>
+									</ul>
+								</div>
+								<div class="top-right-hd">
+									<ul>
+										<li>
+											<a href="sign_in.html" class="account-link" role="button">
+												<span class="header-nav">Sign In</span>
+											</a>	
+										</li>
+										<li>
+											<a href="sign_up.html" class="account-link" role="button">
+												<span class="header-nav">Sign Up</span>
+											</a>	
+										</li>											
+									</ul>
+								</div>
+							</div>						
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="sub-header">				
+				<div class="container">				
+					<div class="row">
+						<div class="col-lg-12 col-md-12 col-sm-12">
+							<nav class="navbar navbar-expand-lg navbar-light bg-dark1 justify-content-sm-start">
+								<a class="order-1 order-lg-0 ml-lg-0 ml-3 mr-auto" href="index.html"><img src="images/output-onlinepngtools.png" alt=""></a>
+								<button class="navbar-toggler align-self-start" type="button">
+									<i class="fas fa-bars"></i>
+								</button>
+								<div class="collapse navbar-collapse d-flex flex-column flex-lg-row flex-xl-row justify-content-lg-end bg-dark1 p-3 p-lg-0 mt1-5 mt-lg-0 mobileMenu" id="navbarSupportedContent">
+									<ul class="navbar-nav align-self-stretch">
+										<li class="nav-item active">
+											<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+										</li>
+										<li class="nav-item dropdown">
+											<a href="about.html" class="nav-link">About Us</a>
+										</li>
+										<li class="nav-item dropdown">
+											<a href="about.html" class="nav-link">Browse Freelancers</a>
+										</li>
+																				
+									</ul>
+									<!-- <a href="#" class="search-link" role="button" data-toggle="modal" data-target="#searchModal"><i class="fas fa-search"></i></a> -->
+									<!-- <a href="sign_in.html" class="add-post">SIGN IN</a>
+									<a href="sign_up.html" class="add-task">REGISTER</a> -->									
+								</div>
+								<div class="responsive-search order-1">
+									<input type="text" class="rsp-search" placeholder="Search...">
+									<i class="fas fa-search r-sh1"></i>
+								</div>
+							</nav>							
+							<div class="overlay"></div>
+						</div>					
+					</div>					
+				</div>
+			</div>
+		</header>
+		<!-- Header End -->
+		<!-- Title Start -->
+		<div class="title-bar">			
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<ol class="title-bar-text">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Maria Williams - Profile</li>
+						</ol>
+					</div>		
+				</div>		
+			</div>		
+		</div>
+		<!-- Title Start -->
+		<!-- Body Start -->	
+		<main class="browse-section">				
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4">
+						<div class="account_dt_left">
+							<div class="job-center-dt">
+								<img src="images/homepage/candidates/hairdresser-659145_640.jpg" alt="">
+								<div class="job-urs-dts">									
+									<h4>Maria Williams</h4>
+									<span>Hairdresser</span>
+								</div>
+								<ul class="user_btns">
+									<li><button class="hire_btn ball" type="button">Hire Me</button></li>
+								</ul>
+							</div>
+							<div class="rlt_section">
+								<div class="rtl_left">
+									<h6>Location</h6>
+								</div>
+								<div class="rtl_right">
+									<span><i class="fas fa-map-marker-alt lc_icon"></i> New Jersey, USA</span>
+								</div>
+								<div class="my_location">
+									<div id="map"></div>
+								</div>
+								<ul class="rlt_section2">
+									<li>
+										<div class="rtl_left2">
+											<h6>Rate</h6>
+										</div>
+										<div class="rtl_right2">
+											<span>$25</span>
+										</div>
+									</li>
+									<li>
+										<div class="rtl_left2">
+											<h6>Age</h6>
+										</div>
+										<div class="rtl_right2">
+											<span>28</span>
+										</div>
+									</li>
+									<li>
+										<div class="rtl_left2">
+											<h6>Experience</h6>
+										</div>
+										<div class="rtl_right2">
+											<span>5 Years</span>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="my_websites">
+								<ul>
+									<li><a href="#" class="web_link"><i class="fas fa-globe"></i>www.companysite.com</a></li>
+								</ul>
+							</div>
+							<div class="social_section3 mb80">
+								<div class="social_leftt3">
+									<h6>Contact Social Account</h6>
+								</div>
+								<ul class="social_accounts">
+									<li><a href="#" class="social_links"><i class="fab fa-facebook-f f1"></i>http://facebook.com/johndoe</a></li>
+									<li><a href="#" class="social_links"><i class="fab fa-instagram l1"></i>http://instagram.com/johndoe</a></li>
+									<li><a href="#" class="social_links"><i class="fab fa-twitter t1"></i>http://twitter.com/johndoe</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-9 col-md-8 mainpage">
+						<div class="account_tabs">
+							<ul class="nav nav-tabs">
+								<li class="nav-item">
+									<a class="nav-link active" href="other_freelancer_profile.html">Profile</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="other_freelancer_portfolio.html">Portfolio</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="other_freelancer_reviews.html">Reviews</a>
+								</li>
+							</ul>
+						</div>	
+						<div class="view_chart">
+							<div class="view_chart_header">
+								<h4>Tagline</h4>								
+							</div>
+							<div class="view_chart_body">
+								<p class="user_about_des">I am an expert hairdresser.</p>
+							</div>
+						</div>					
+						<div class="view_chart">
+							<div class="view_chart_header">
+								<h4>About</h4>								
+							</div>
+							<div class="view_chart_body">
+								<p class="user_about_des">I have been working as a hairdresser for almost 5 years. I specialize in hair cutting, curling, coloring, waxing, facials, tanning, etc.</p>
+							</div>
+						</div>
+						<div class="view_chart">
+							<div class="view_chart_header">
+								<h4>Services</h4>								
+							</div>
+							<div class="view_chart_body">
+								<div class="job-skills">
+									<a href="#">Hair Cut</a>
+									<a href="#">Hair Curl</a>
+									<a href="#">Hair Color</a>
+									<a href="#">Facial</a>
+									<a href="#">Nails</a>								
+								</div>
+							</div>
+						</div>
+						<div class="view_chart">
+							<div class="view_chart_header">
+								<h4>Language</h4>								
+							</div>
+							<div class="view_chart_body">
+								<div class="job-skills">
+									<a href="#" class="more-skills">English</a>
+									<a href="#" class="more-skills">Italian</a>																	
+								</div>
+							</div>
+						</div>						
+					</div>																																						
+				</div>
+			</div>					
+		</main>
+		<!-- Body End -->
+		<!-- footer Start -->
+		<footer class="footer">
+			<div class="subscribe-newsletter">
+				<div class="container">
+					<div class="row justify-content-between">
+						<div class="col-lg-6 col-md-6">
+							<div class="subcribes">
+								<div class="text-step1">
+									<h4>Subscribe to Newsletter</h4>
+									<div class="btext-heading mt-2" style="color:#acacac; font-size:14px;">
+										<i class="fas fa-check-circle"></i>Cras nunc mauris, rhoncus eu justo at, egestas sagittis felis. Ut sed feugiat eros.
+									</div>								
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-5 col-md-6">
+							<div class="subcribe-input">
+								<input class="nltr-input" type="email" placeholder="Your Email Address"> 
+								<button class="s-btn">Subscribe</button>
+							</div>
+						</div>
+					</div>					
+				</div>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-3">
+						<div class="about-jobby">
+							<a href="index.html"><img src="images/logo1.svg" alt=""></a>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque eu purus et diam blandit vehicula sit amet sed metus. Fusce condimentum non neque at fringilla. Aenean malesuada aliquet tincidunt.</p>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>About</h4>
+							<ul>							
+								<li><a href="about.html">About Us</a></li>
+								<li><a href="sign_in.html">Login</a></li>
+								<li><a href="my_freelancer_profile.html">My Account</a></li>
+								<li><a href="contact_us.html">Contact</a></li>
+								<li><a href="privacy_policy.html">Privacy Policy</a></li>
+								<li><a href="Terms.html">Terms of Use</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>For Companies</h4>
+							<ul>							
+								<li><a href="browse_freelancers.html">Browese Freelancers</a></li>
+								<li><a href="post_a_job.html">Post a Job</a></li>
+								<li><a href="post_a_project.html">Post a Project</a></li>
+								<li><a href="pricing_plans.html">Pricing Plans</a></li>								
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-3">
+						<div class="footer-links">
+							<h4>For Candidates</h4>
+							<ul>							
+								<li><a href="browse_jobs.html">Browese Jobs</a></li>
+								<li><a href="my_freelancer_jobs.html">Jobs Alerts</a></li>
+								<li><a href="my_freelancer_jobs.html">Applied Jobs</a></li>
+								<li><a href="my_freelancer_bookmarks.html">Bookmarks</a></li>								
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="copy-social">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-6 col-md-6">
+							<div class="copyright">
+								<i class="far fa-copyright"></i>Copyright 2019 <span>Jobby</span> by <a href="#" >Gambolthemes</a>. All Right Reserved.
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="social-icons">
+								<ul>
+									<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+									<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+									<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- footer End -->
+		<!-- Scroll to Top Button Start -->
+		<button onclick="topFunction()" id="pageup" title="Go to top"><i class="fas fa-arrow-up"></i></button>
+		<!-- Scroll to Top Button End -->
+		<!-- Scripts js -->	
+		<script src="js/jquery.min.js"></script>
+		<script src="js/datepicker.min.js"></script>
+		<script src="js/i18n/datepicker.en.js"></script>
+		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<script src="vendor/OwlCarousel/owl.carousel.js"></script>
+		<script src="vendor/semantic/semantic.min.js"></script>
+		<script src="js/jquery.range-min.js"></script>
+		<script src="js/custom1.js"></script>
+
+		
+		<!-- Map Box JS -->
+		<script src='https://unpkg.com/es6-promise@4.2.4/dist/es6-promise.auto.min.js'></script>
+		<script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+		<script>
+			mapboxgl.accessToken = 'pk.eyJ1IjoiZ2FtYm9sIiwiYSI6ImNqdm03bzYydDE2cW00YWwyeHprd3FqamcifQ.HBy4R4sRcXgbgn2OteqFkQ';
+			var mapboxClient = mapboxSdk({ accessToken: mapboxgl.accessToken });
+			mapboxClient.geocoding.forwardGeocode({
+			query: 'New Jersey, USA',
+			autocomplete: false,
+			limit: 1
+			})
+			.send()
+			.then(function (response) {
+			if (response && response.body && response.body.features && response.body.features.length) {
+			var feature = response.body.features[0];
+		 
+			var map = new mapboxgl.Map({
+			container: 'map',
+			style: 'mapbox://styles/mapbox/streets-v11',
+			center: [-74.405663,40.058323],
+			zoom: 10
+			});				
+  
+			new mapboxgl.Marker()
+			.setLngLat(feature.center)
+			.addTo(map);
+			}
+			
+			// Add zoom and rotation controls to the map.
+			map.addControl(new mapboxgl.NavigationControl());
+			});						
+		</script>
+		
+	</body>
+	
+</html>
