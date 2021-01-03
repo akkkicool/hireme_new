@@ -326,18 +326,64 @@
 				        success: function (data) {
 				        	console.log(data);
 				        	$.each(data,function(index, value){
-				        		html += '<div class="row"><div class="col-lg-3"><input type="checkbox" name="sub_cat_id[]" value="'+index+'" required> <label>'+value+'</label></div><div class="col-lg-3"><input type="text" name="price[]" class="job-input" value="" placeholder="Price in USD" required></div><div class="col-lg-3"><input type="text" class="job-input" value="" placeholder="Time in minute" required></div></div>';
+				        		html += '<div class="row"><div class="col-lg-3"><div class="form-group"><input class="atul" type="checkbox" name="sub_cat_id['+index+']" value="'+index+'" required> <label>'+value+'</label></div></div><div class="col-lg-3"><div class="form-group"><input type="text" name="sub_cat_price['+index+']" class="job-input sub_cat_price_'+index+'" value="" placeholder="Price in USD" required></div></div><div class="col-lg-3"><div class="form-group"><input type="text" class="job-input sub_cat_time_'+index+'" name="sub_cat_time['+index+']" value="" placeholder="Time in minute" required></div></div></div>';
 								   // html += '<div class="item" data-value="'+index+'">'+value+'</div>'
+
+								    var startbox = $('input[name="sub_cat_price[]"]');
+									var endbox = $('input[name="sub_cat_time[]"]'); 
+									var checkbox = $('input[name="sub_cat_id[]"]');
+
+								    var bootstrapValidator = $('#updateService').data('bootstrapValidator');
+
+								    console.log(bootstrapValidator.options.fields);
+
+								    $('#updateService').bootstrapValidator('addField', startbox, {
+								        validators: {
+								            notEmpty: {
+								                message: 'The start time is required and cannot be empty'
+								            },
+								        }
+								    });
+								    $('#updateService').bootstrapValidator('addField', endbox, {
+								        validators: {
+								            notEmpty: {
+								                message: 'The end time is required and cannot be empty'
+								            },
+								        }
+								    });
+								    console.log(bootstrapValidator.options.fields);
+								    
 								});
 
 				        	html += '</div>';
-				        	var $option = $("input[name='sub_cat_id[]']");
-				        	 $('#updateService').bootstrapValidator('addField', $option);
+				        	
+				        	
+
 				            $('.sub_cate_data').html(html);
 				        }
 				    });
 				}  
 			});
+
+
+			$(document).on('click', '.atul', function(e) {
+		    	var index = $(this).val();
+
+		    	var startbox = $('input[name="sub_cat_price['+index+']"]');
+				var endbox = $('input[name="sub_cat_time['+index+']"]'); 
+				var checkbox = $('input[name="sub_cat_id['+index+']"]');
+
+				//var attribut=$yourField.attr("name"),
+				var bv = $('#updateService').data('bootstrapValidator');
+
+			
+
+		        var bootstrapValidator = $('#updateService').data('bootstrapValidator');
+		        bootstrapValidator.enableFieldValidators(startbox, !$(checkbox).prop('checked'));
+		        bootstrapValidator.enableFieldValidators(endbox, !$(checkbox).prop('checked'));
+		        $(startbox).prop("enable", $(checkbox).prop('checked'));
+		        $(endbox).prop("enable", $(checkbox).prop('checked'));
+		    });
 		</script>
 
 		<script>

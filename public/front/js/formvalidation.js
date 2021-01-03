@@ -304,7 +304,21 @@ $(document).ready(function() {
                         }
                     }
                 },
-                sub_cat_id[]: {
+                'sub_cat_id[]': {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select sub-category'
+                        }
+                    }
+                },
+                'sub_cat_price[]': {
+                    validators: {
+                        notEmpty: {
+                            message: 'Please select sub-category'
+                        }
+                    }
+                },
+                'sub_cat_time[]': {
                     validators: {
                         notEmpty: {
                             message: 'Please select sub-category'
