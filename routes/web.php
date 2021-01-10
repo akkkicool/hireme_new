@@ -229,8 +229,14 @@ Route::group(array('namespace'=>'Front', 'middleware'=>'prevent-back-history'), 
         Route::post('/update_service', 'FreelanceController@update_service')->name('update_service');
 
         Route::get('/store-front', 'FreelanceController@store_front')->name('store_front');
+        Route::get('/store-front/view/{id}', 'FreelanceController@store_front_view')->name('store_front_view');
+        Route::get('/store-front/edit/{id}', 'FreelanceController@store_front_edit')->name('store_front_edit');
         Route::any('/store-front/create', 'FreelanceController@store_create')->name('store_create');
 
+
     });
+
+    Route::any('/browse', 'CustomerController@browse')->name('browse');
+
 
 });

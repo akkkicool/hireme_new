@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\FreelanceProfile;
 use App\Models\Portfolio;
+use App\Models\Store;
 use Validator;
 use Auth;
 use Hash;
@@ -84,6 +85,12 @@ class CustomerController extends Controller{
             }
         }
         
+    }
+
+
+    public function browse(){
+        $record = Store::with('user')->where('is_paid', 1)->groupBy('user_id')->paginate();
+        gs($record);
     }
 
 

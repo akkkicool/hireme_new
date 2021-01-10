@@ -8,10 +8,16 @@ use App\Models\User;
 use App\Models\FreelanceProfile;
 use App\Models\Portfolio;
 use App\Models\Category;
+use App\Models\Store;
+use App\Models\StoreSubCategory;
+use App\Models\StorePortfolio;
 use Validator;
 use Auth;
 use Hash;
 use Session;
+use DB;
+use Exception;
+use Image;
 
 class FreelanceController extends Controller{
 
@@ -166,18 +172,132 @@ class FreelanceController extends Controller{
 
     public function store_front(Request $request){
 
-       return view('front.freelancer.storefront');         
+       $record = Store::where('user_id', Auth::user()->id)->get();
+       return view('front.freelancer.store.index', compact('record'));         
+    }
+
+   
+
+    public function store_front_view($id,Request $request){
+        $record    =  Store::with(['storeSubCategory', 'storePortfolio'])->where("id",base64_decode($id))->where('user_id', Auth::user()->id)->first();
+
+        if(!empty($record)){
+            return view('front.freelancer.store.view',compact('record'));
+        }else{
+            toastr()->error("Wrong Url");
+            return redirect()->back();
+        }
+    }
+
+
+     public function store_front_edit($id,Request $request){
+        $record    =   Store::with(['storeSubCategory', 'storePortfolio'])->where("id",base64_decode($id))->where('user_id', Auth::user()->id)->first();
+        if(!empty($record)){
+            return view('front.freelancer.store.edit',compact('record'));
+        }else{
+            toastr()->error("Wrong Url");
+            return redirect()->back();
+        }
     }
 
 
     public function store_create(Request $request){
 
-      $service['tagline'] =  Auth::user()->profile->tagline;
-      $service['description'] =  Auth::user()->profile->description;
-      $service['exp'] =  Auth::user()->profile->exp;
-      $service['rate'] =  Auth::user()->profile->rate;
-      $service['category'] =  Auth::user()->profile->category;
-      $service['sub_category'] =  Auth::user()->profile->sub_category;
+      if($request->isMethod('post')){
+
+
+           $validator = Validator::make($request->all(), [
+                'category_id' => 'required',
+                'exp'=>'required',
+                'sub_cat_id'=>'required',
+                'sub_cat_price'=>'required',
+                'sub_cat_time'=>'required',
+                'tagline'=>'required',
+                'description'=>'required',
+                'files' => 'required'
+              //  'password_confirmation'=>'sometimes|required_with:password',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()
+                            ->withErrors($validator)
+                            ->withInput();
+            }else{
+
+              DB::beginTransaction();
+
+              try {
+                  $store = new Store();
+                  $store->category_id = $request->category_id;
+                  $store->exp = $request->exp;
+                  $store->tagline = $request->tagline;
+                  $store->description = $request->description;
+                  $store->user_id = Auth::user()->id;
+
+                  if($store->save()){
+                    $sub_category = $request->sub_cat_id;
+                    foreach($sub_category as $k => $v){
+                      if(isset($v)){
+                        $image_arr[] = ['user_id'=>Auth::user()->id,'store_id'=>$store->id, 'sub_cat_id'=>$v,'sub_cat_price'=>$request->sub_cat_id[$k],'sub_cat_time'=>$request->sub_cat_time[$k]  ];
+                      }
+                       StoreSubCategory::insert($image_arr);
+                    }
+
+                    $fileName   =   null;
+                    $file_array = array();
+                    if ($request->hasFile('files')) {
+
+                          $image = $request->file('files');
+
+                          foreach( $image as $key => $tmp_name) {
+                              $image       = $tmp_name;            
+                              $filename    = $image->getClientOriginalName();
+                              $filename    = time()."-".$filename;
+                              $image_resize = Image::make($image->getRealPath());              
+                              $image_resize->resize(260, 193);
+                              $image_resize->save(public_path('uploads/portfolio/' .$filename));
+                              $file_array[$key] = array('user_id'=> Auth::user()->id,'store_id'=>$store->id, "type"=> 1, 'file_name'=>$filename );
+                          }   
+                          StorePortfolio::insert($file_array);
+                     }
+
+
+                     if ($request->hasFile('video')) {
+
+                          $image = $request->file('video');
+          
+                          $filename    = $image->getClientOriginalName();
+                          $filename    = time()."-".$filename;
+                          $path = public_path().'/uploads/videos/';
+                          $image->move($path, $filename);
+
+                          $file_array = array('user_id'=> Auth::user()->id,'store_id'=>$store->id, "type"=> 2, 'file_name'=>$filename );
+                       
+                          StorePortfolio::insert($file_array);
+                     }
+
+                     DB::commit();
+
+                     toastr()->success('Store Successfully created !');
+
+                     return redirect()->route('store_front');
+
+
+                  }
+                  
+              } catch (\Exception $e) {
+                  DB::rollback();
+                  gs( $e->getMessage());
+                  toastr()->error('something went wrong !');
+                  return redirect()->back()
+                            ->withInput();
+              }
+
+            }
+
+
+      }
+
 
        $category = Category::whereNull('parent_id')->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
 
@@ -186,7 +306,7 @@ class FreelanceController extends Controller{
 
        $sub_category = Category::whereIn('parent_id', $cat)->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
 
-       return view('front.freelancer.store_create', compact('service','category', 'sub_category'));         
+       return view('front.freelancer.store.create', compact('category', 'sub_category'));         
     }
 
 }

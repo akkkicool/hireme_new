@@ -26,7 +26,7 @@ class AuthController extends Controller{
 	
     public function login(Request $request) {
 
-        if($request->isMethod('post')){
+        if($request->isMethod('post')){ 
 
             $validator = Validator::make($request->all(), [
                 'email' => 'required',
@@ -41,11 +41,12 @@ class AuthController extends Controller{
             $remember_me    =   true;
 
             $user_data      =   User::where(["email"=>$email, "status"=>1, "is_deleted"=>0])->whereIn('role_id', [2, 3])->first();
+            
 
             if(!empty($user_data)){
                  if(Hash::check($password,$user_data->password)){
                    
-                    Auth::attempt(["email"=>$email,"password"=>$password],$remember_me);
+                   Auth::attempt(["email"=>$email,"password"=>$password],$remember_me);
                     toastr()->success('Logged in Successfully');
                    
                     $redirect = (Auth::user()->role_id == 2) ? 'customer_profile' : 'freelance_profile';
@@ -489,7 +490,7 @@ class AuthController extends Controller{
         if($request->ajax()){
             $category_id = explode(",",$request->category_id);
 
-            $child_category = Category::whereIn('parent_id', $category_id)->where('status',1)->where('is_deleted',0)->pluck('name', 'id')->toArray();
+            $child_category = Category::whereIn('parent_id', $category_id)->where('status',1)->where('is_deleted',0)->get()->toArray();
             return response()->json($child_category);
         }
     }

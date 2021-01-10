@@ -347,7 +347,42 @@ $(document).ready(function() {
                     }
                 }
             }
-    });
+    })
+    .on('click', '.atul', function() {
+            var isEmpty = $(this).prop('checked');
+
+            var index = $(this).val();
+
+             var startbox = $('input[name="sub_cat_price['+index+']"]');
+             console.log(startbox);
+             var endbox = $('input[name="sub_cat_time['+index+']"]'); 
+             var checkbox = $('input[name="sub_cat_id['+index+']"]');
+
+            // $('#updateService')
+            //         .bootstrapValidator('enableFieldValidators', startbox, isEmpty)
+            //         .bootstrapValidator('enableFieldValidators', endbox, isEmpty);
+
+            // Revalidate the field when user start typing in the password field
+            if ($(this).prop('checked')) {
+                 $('#updateService').bootstrapValidator('addField', startbox, {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Price is required'
+                                            },
+                                        }
+                                    });
+                                    $('#updateService').bootstrapValidator('addField', endbox, {
+                                        validators: {
+                                            notEmpty: {
+                                                message: 'Time is required'
+                                            },
+                                        }
+                                    });                  
+            }else{
+                $('#updateService').bootstrapValidator('removeField', startbox);
+                $('#updateService').bootstrapValidator('removeField', endbox);
+            }
+        });
 
 
               

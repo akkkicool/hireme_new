@@ -205,14 +205,14 @@
 												<div class="col-lg-6">
 													<div class="form-group">
 														<label class="label15">Category*</label>
-														<div class="ui fluid search selection dropdown skills-search">
+														<div class="ui disabled fluid search selection dropdown skills-search">
 															{!! Form::hidden('category_id',null, [] ) !!}
 															<i class="dropdown icon"></i>
 															<input class="search" autocomplete="off" tabindex="0">
 															<span class="sizer" style=""></span>
 															<div class="default text">Select Your Service Category</div>
 															<div class="menu transition hidden" tabindex="-1">   
-																<div class="item" data-value="">Select Category</div>
+																<!-- <div class="item" data-value="">Select Category</div> -->
 																@foreach($category as $key => $val)
 																	<div class="item" data-value="{{$key}}">{{$val}}</div>
 																@endforeach	
@@ -326,7 +326,7 @@
 				        success: function (data) {
 				        	console.log(data);
 				        	$.each(data,function(index, value){
-				        		html += '<div class="row" '+(index === 0 ? 'style="margin-top:-4%"':'style="margin-top:-2%"' )+'><div class="col-lg-3"><div class="form-group"><input class="atul" type="checkbox" name="sub_cat_id['+index+']" value="'+value.id+'"> <label>'+value.name+'</label></div></div><div class="col-lg-3"><div class="form-group"><input type="text" name="sub_cat_price['+index+']" class="job-input sub_cat_price_'+index+'" value="" placeholder="Price in USD"></div></div><div class="col-lg-3"><div class="form-group"><input type="text" class="job-input sub_cat_time_'+index+'" name="sub_cat_time['+index+']" value="" placeholder="mm:ss"></div></div></div>';
+				        		html += '<div class="row" '+(index === 0 ? 'style="margin-top:-4%"':'style="margin-top:-2%"' )+'><div class="col-lg-3"><div class="form-group"><input class="atul" type="checkbox" name="sub_cat_id['+index+']" value="'+value.id+'"> <label>'+value.name+'</label></div></div><div class="col-lg-3"><div class="form-group"><input type="text" name="sub_cat_price['+index+']" class="job-input sub_cat_price_'+index+'" value="" placeholder="Price in USD"></div></div><div class="col-lg-3"><div class="form-group"><input type="text" class="job-input sub_cat_time_'+index+'" name="sub_cat_time['+index+']" value="" placeholder="Minuts"></div></div></div>';
 								    
 								});
 
